@@ -1,0 +1,155 @@
+/* Variables */
+:root {
+    --bg-dark: #121212;
+    --bg-light: #f5f5f5;
+    --text-dark: #fff;
+    --text-light: #222;
+    --card-dark: #1e1e1e;
+    --card-light: #ffffff;
+    --accent: #3498db;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.light-mode {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+}
+
+.container {
+    background-color: var(--card-dark);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.4s ease;
+}
+
+body.light-mode .container {
+    background-color: var(--card-light);
+}
+
+/* Headings */
+h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    animation: fadeInDown 0.6s ease;
+}
+
+h2 {
+    margin-bottom: 15px;
+    animation: fadeInDown 0.5s ease;
+}
+
+/* Question & Choices */
+#question-container {
+    margin-bottom: 20px;
+}
+
+#choices-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#choices-list li {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 12px 16px;
+    margin: 10px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: fadeInUp 0.3s ease;
+}
+
+body.light-mode #choices-list li {
+    background-color: #ecf0f1;
+    color: #000;
+}
+
+#choices-list li:hover {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--accent);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+    transform: translateY(-30px);
+    opacity: 0;
+    }
+    to {
+    transform: translateY(0px);
+    opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+    transform: translateY(30px);
+    opacity: 0;
+    }
+    to {
+    transform: translateY(0px);
+    opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+    padding: 20px;
+    }
+
+    h1 {
+    font-size: 1.5rem;
+    }
+
+    button {
+    font-size: 14px;
+    padding: 10px 16px;
+    }
+}

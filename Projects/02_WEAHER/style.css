@@ -1,0 +1,119 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* Container */
+.container {
+    background-color: #1f1f1f;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading */
+.container h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #ffffff;
+    animation: slideDown 0.7s ease-out;
+}
+
+/* Input section */
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#city-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #2e2e2e;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+#city-input::placeholder {
+    color: #aaa;
+}
+
+#get-weather-btn {
+    background-color: #03a9f4;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#get-weather-btn:hover {
+    background-color: #0288d1;
+    transform: scale(1.05);
+}
+
+/* Weather info */
+#weather-info {
+    margin-top: 20px;
+    text-align: left;
+    background-color: #292929;
+    padding: 15px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#weather-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#weather-info p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+/* Error message */
+#error-message {
+    margin-top: 15px;
+    color: #ff4d4d;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Utility */
+.hidden {
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

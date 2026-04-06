@@ -1,0 +1,156 @@
+/* Root Variables */
+:root {
+    --bg-dark: #121212;
+    --bg-light: #f5f5f5;
+    --text-dark: #ffffff;
+    --text-light: #000000;
+    --accent: #00b894;
+    --card-dark: #1e1e1e;
+    --card-light: #ffffff;
+    --input-bg-dark: #2c2c2c;
+    --input-bg-light: #ffffff;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+}
+
+.container {
+    background-color: var(--card-dark);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+body.light-mode .container {
+    background-color: var(--card-light);
+}
+
+/* Headings */
+h1, h2, h3 {
+    margin-bottom: 20px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+    animation: slideUp 0.6s ease-in-out;
+}
+
+input, button {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input {
+    background-color: var(--input-bg-dark);
+    color: var(--text-dark);
+}
+
+body.light-mode input {
+    background-color: var(--input-bg-light);
+    color: var(--text-light);
+}
+
+button {
+    background-color: var(--accent);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.5);
+}
+
+/* Expense List */
+#expense-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#expense-list li {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeInUp 0.4s ease;
+}
+
+body.light-mode #expense-list li {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+#total {
+    margin-top: 10px;
+    animation: zoomIn 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    input, button {
+        font-size: 14px;
+    }
+}
